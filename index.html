@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Profit|Loss Calculator</h1>
+    </div>
+    <div class="calc">
+     <div class="profit">
+            <h1>Calculate Profit</h1>
+            <img src="profit.png" width="100px">
+         <div class="input">
+             <div class="cpz">
+                 <input type="text" id="cp" placeholder="Enter the Cost Price">
+             </div>
+             <div class="spz">
+                  <input type="text" id="sp" placeholder="Enter the Selling Price">
+             </div>
+         </div>
+         <div class="result">
+             <img src="calculate01.png" width="50px"  onclick="calculateProfit()">
+             <h1>You have earned <input type="text" id="profitPercent"> profit</h1>
+         </div>
+     </div>
+      <div class="loss">
+          <h1>Calculate Loss</h1>
+          <img src="loss.png" width="100px" >
+         <div class="inputlo">
+            <div class="cplo">
+               <input type="text" id="cpq" placeholder="Enter the Cost Price">
+            </div>
+           <div class="splo">
+              <input type="text" id="spq" placeholder="Enter the Selling Price">
+           </div>
+         </div>
+          <div class="resultlo">
+             <img src="calculate.png" width="50px" onclick="calculateLoss()">
+             <h1>You have endured <input type="text" id="lossPercent"> loss</h1>
+          </div>
+      </div> 
+    </div>
+
+    <script>
+        const A = 100;
+
+        function calculateProfit(){
+            let cpa = cp.value;
+            let spa = sp.value;
+            let asd = spa-cpa;
+
+            let percent = Math.floor(((asd/cpa)*A)) + "%";
+
+
+            profitPercent.value = percent;
+        }
+
+        function calculateLoss(){
+            let cpy = cpq.value;
+            let spy = spq.value;
+            let asdo = cpy-spy;
+
+            let percento = Math.floor(((asdo/cpy)*A))+ "%";
+
+
+            lossPercent.value = percento;
+        }
+    </script>
+    
+</body>
+</html>
